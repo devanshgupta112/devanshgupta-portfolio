@@ -9,6 +9,7 @@
    ========================================================================== */
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
+const html = document.documentElement;
 
 if (mobileMenu && navMenu) {
     mobileMenu.addEventListener('click', (e) => {

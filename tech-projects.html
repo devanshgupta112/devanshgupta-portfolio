@@ -78,7 +78,7 @@
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" aria-label="Number of technologies">8</span>
+                            <span class="stat-number" aria-label="Number of technologies">9</span>
                             <span class="stat-label">Technologies</span>
                         </div>
                         <div class="stat-item">
@@ -118,6 +118,10 @@
                     <button class="filter-btn" data-filter="nodejs" aria-pressed="false">
                         <i class="fab fa-node-js" aria-hidden="true"></i>
                         Node.js
+                    </button>
+                    <button class="filter-btn" data-filter="flutter" aria-pressed="false">
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        Flutter
                     </button>
                     <button class="filter-btn" data-filter="database" aria-pressed="false">
                         <i class="fas fa-database" aria-hidden="true"></i>
@@ -272,15 +276,13 @@
 </article>
 <article class="project-card" data-category="python visualization datascience" role="article" tabindex="0">
     <div class="project-image">
-        <img id="projectPreviewImage" width="678" height="200"
-            src="./assests/img/Screenshot 2025-12-28 at 10.46.01 AM.png"
-            alt="Data Analysis Dashboard Portfolio Preview"
-            class="project-preview-image"
-        />
+        <div class="project-placeholder">
+            <i class="fas fa-chart-area" aria-hidden="true"></i>
+        </div>
 
         <div class="project-overlay">
             <div class="project-links">
-                <a href="../devanshgupta-portfolio/projects/data_science_projects/index.html" class="project-link" aria-label="Open Data Analysis Dashboard" title="View Project">
+                <a href="projects/data_science_projects/index.html" class="project-link" aria-label="Open Data Analysis Dashboard" title="View Project">
                     <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                 </a>
                 <a href="#" 
@@ -327,8 +329,53 @@ Across the projects featured here, I work with real-world datasets spanning mult
     </div>
 </article>
 
+                            <!-- ============== PROJECT 3: Expense Tracker ============== -->
+                            <article class="project-card" data-category="flutter database tools" role="article" tabindex="0">
+                                <div class="project-image">
+                                    <div class="project-placeholder">
+                                        <i class="fas fa-wallet" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="https://github.com/devanshgupta112/Expense-Tracker#readme" class="project-link" aria-label="Open Expense Tracker repository" title="View Project" target="_blank" rel="noopener noreferrer">
+                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="https://github.com/devanshgupta112/Expense-Tracker" class="project-link" aria-label="View Expense Tracker source code on GitHub" title="Source Code" target="_blank" rel="noopener noreferrer">
+                                                <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <span class="status-badge open-source">Open Source</span>
+                                    </div>
+                                </div>
 
-                            <!-- ============== PROJECT 3: More Projects Coming Soon ============== -->
+                                <div class="project-content">
+                                    <h3 class="project-title">Expense Tracker</h3>
+                                    <p class="project-description">
+                                        A Flutter app for tracking daily income and expenses with category-based insights and local persistence for fast, offline-first usage.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Flutter</span>
+                                        <span class="tech-tag">Dart</span>
+                                        <span class="tech-tag">SQLite</span>
+                                        <span class="tech-tag">State Management</span>
+                                    </div>
+                                    <div class="project-metrics">
+                                        <div class="metric">
+                                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                            <span>Cross-Platform</span>
+                                        </div>
+                                        <div class="metric">
+                                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                                            <span>Budget Insights</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+
+                            <!-- ============== PROJECT 4: More Projects Coming Soon ============== -->
                             <article class="project-card" data-category="all" role="article" tabindex="0">
                                 <div class="project-image">
                                     <div class="project-placeholder">
@@ -466,3 +513,8 @@ Across the projects featured here, I work with real-world datasets spanning mult
             </div>
         </div>
     </footer>
+
+    <script src="assests/js/script.js"></script>
+    <script src="assests/js/projects.js"></script>
+</body>
+</html>

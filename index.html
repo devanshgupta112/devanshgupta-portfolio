@@ -154,7 +154,7 @@
 
   <!-- ============== JAVASCRIPT FILES ============== -->
   <!-- Add your JavaScript files here -->
-  <script src="assets/js/script.js"></script>
+  <script src="assests/js/script.js"></script>
   
   <!-- Theme toggle functionality -->
   <script>
@@ -165,8 +165,12 @@
       
       // Update theme toggle icon
       const themeToggle = document.getElementById('theme-toggle');
-      const icon = themeToggle.querySelector('i');
-      icon.className = 'fas fa-sun'; // Show sun icon in dark mode
+      if (themeToggle) {
+        const icon = themeToggle.querySelector('i');
+        if (icon) {
+          icon.className = 'fas fa-sun'; // Show sun icon in dark mode
+        }
+      }
     });
   </script>
 </body>
