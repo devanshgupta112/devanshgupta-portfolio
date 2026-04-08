@@ -1,0 +1,14 @@
+CTA heading:
+Want early access to BookNook on Android?
+
+CTA paragraph:
+Keep one clear path for new visitors: try the app if your access link is ready, or join the waitlist if you are still rolling access out in stages.
+
+Form placeholder:
+Enter your email for Android access
+
+Button:
+Join Waitlist
+
+Success message:
+You're on the waitlist. We'll send Android access updates soon.

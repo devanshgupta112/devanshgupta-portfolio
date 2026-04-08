@@ -1,0 +1,19 @@
+Use for: the main phone screenshot in the hero section.
+Export name: 01-hero-home.png
+Best format: PNG
+Best shape: portrait Android screenshot, around 1080 x 2400
+
+Show:
+- one strong book cover above the fold
+- a clean top area with tabs or category chips
+- one obvious save action
+- an active feed that looks real
+
+Avoid:
+- empty states
+- placeholder avatars
+- long blocks of unreadable text
+- debug text or notifications
+
+Goal:
+Make the app look attractive in 2 seconds.

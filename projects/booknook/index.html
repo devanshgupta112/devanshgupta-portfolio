@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="BookNook is an Android reading app for discovering books, saving them fast, sharing quick thoughts, and building a personal library."
+  >
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#561c24">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BookNook | Android App for Discovering Books">
+  <meta
+    property="og:description"
+    content="Discover books, save them to shelves, share quick thoughts, and build your reading identity with BookNook on Android."
+  >
+  <title>BookNook | Android App for Discovering Books</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "BookNook",
+      "applicationCategory": "BooksApplication",
+      "operatingSystem": "Android",
+      "description": "BookNook is an Android reading app for discovering books, saving them to shelves, sharing quick thoughts, and building a personal library."
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="BookNook home">
+        <span class="brand-mark" aria-hidden="true">Bn</span>
+        <span class="brand-name">BookNook</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#android">Android</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <a
+        class="button button--primary header-cta"
+        href="assets/downloads/booknook-release.apk"
+        download="BookNook-Android.apk"
+      >
+        Download Now
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Android app for modern readers</p>
+          <h1>Discover books in a feed you will actually want to open.</h1>
+          <p class="hero-text">
+            BookNook helps new readers discover books fast, save them to shelves, share quick
+            thoughts, and follow people with similar taste. It is built for Android from day one
+            and made to feel visual, personal, and easy on the first scroll.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="button button--primary"
+              href="assets/downloads/booknook-release.apk"
+              download="BookNook-Android.apk"
+            >
+              Download Now
+            </a>
+            <a class="button button--secondary" href="#experience">See the Screens</a>
+          </div>
+
+          <p class="hero-brand-line">A more visual reading habit for Android.</p>
+
+          <ul class="hero-tags" aria-label="BookNook highlights">
+            <li>Android-first experience</li>
+            <li>Visual discovery feed</li>
+            <li>Save, rate, and post fast</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="ambient-card ambient-card--note">
+            <p class="ambient-card__title">Android first</p>
+            <p class="ambient-card__text">
+              Built for tall screens, quick taps, and a browse flow that feels natural on mobile.
+            </p>
+          </div>
+
+          <div class="device-stage">
+            <div class="device-frame">
+              <div class="device-notch" aria-hidden="true"></div>
+              <img
+                class="device-screen-image"
+                src="assets/mockups/home_feed.png"
+                alt="BookNook Android home feed showing a reading library snapshot and community book posts"
+                width="1080"
+                height="2424"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </div>
+
+            <div class="ambient-card ambient-card--guest">
+              <p class="ambient-card__title">Guest preview</p>
+              <p class="ambient-card__text">
+                Let new visitors browse the app before they commit and lower the friction to try it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Why people stay</p>
+          <h2>Everything a first-time Android user needs to feel hooked fast.</h2>
+          <p>
+            BookNook focuses on the parts of reading that feel best on a phone: discovering, saving,
+            reacting, and building taste over time.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">01</div>
+            <h3>Visual book discovery</h3>
+            <p>
+              A moodboard-style feed makes book hunting feel scrollable, fast, and personal instead
+              of flat or overwhelming.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">02</div>
+            <h3>Quick shelf saves</h3>
+            <p>
+              Add a book to Want to Read, Reading, or Finished in a tap so the app feels useful
+              right away.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">03</div>
+            <h3>Short-form reactions</h3>
+            <p>
+              Leave quick notes, ratings, or mini reviews without forcing people into a long writing
+              flow.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">04</div>
+            <h3>Smart search</h3>
+            <p>
+              Search by title, author, ISBN, or reader name so discovery feels immediate from the
+              first session.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">05</div>
+            <h3>Personal library</h3>
+            <p>
+              Turn saved books into a shelf system that feels like yours, not just a plain tracker.
+            </p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <div class="feature-icon" aria-hidden="true">06</div>
+            <h3>Follow real taste</h3>
+            <p>
+              Follow readers whose taste overlaps with yours and keep discovering books through
+              people, not only search results.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent" id="how-it-works">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">How it works</p>
+          <h2>From first scroll to saved book in under a minute.</h2>
+          <p>
+            BookNook keeps the first session simple: discover something interesting, save it fast,
+            and come back to a library that already feels personal.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card" data-reveal>
+            <span class="step-number">01</span>
+            <h3>Spot a book you want</h3>
+            <p>
+              Start with a feed or search result that feels active, visual, and easy to understand
+              without a tutorial.
+            </p>
+          </article>
+
+          <article class="step-card" data-reveal>
+            <span class="step-number">02</span>
+            <h3>Save it fast</h3>
+            <p>
+              Move the book into Want to Read, Reading, or Finished with one clear action that feels
+              rewarding on mobile.
+            </p>
+          </article>
+
+          <article class="step-card" data-reveal>
+            <span class="step-number">03</span>
+            <h3>Come back and build taste</h3>
+            <p>
+              Add a quick thought, follow a reader, and let the library and profile start feeling
+              personal.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">See the experience</p>
+          <h2>A mobile flow built to keep discovery, saving, and sharing moving.</h2>
+          <p>
+            From the first feed to book details, posting, shelves, and profile, each screen makes
+            BookNook feel visual, calm, and easy to keep using on Android.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="showcase-panel showcase-panel--wide" data-reveal>
+            <div class="showcase-copy">
+              <span class="showcase-label">Book details</span>
+              <h3>Turn curiosity into a save with one focused, readable detail view.</h3>
+              <p>
+                A clean summary, clear rating, and quick shelf actions help readers decide fast
+                without feeling buried under extra controls.
+              </p>
+            </div>
+
+            <div class="showcase-visual">
+              <img
+                class="showcase-shot showcase-shot--wide"
+                src="assets/mockups/book_detail.png"
+                alt="BookNook book detail sheet with summary, community rating, and shelf actions"
+                width="1080"
+                height="2424"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </article>
+
+          <article class="showcase-panel" data-reveal>
+            <div class="showcase-copy">
+              <span class="showcase-label">Create</span>
+              <h3>Posting from your library should feel quick, lightweight, and natural.</h3>
+              <p>
+                Pull a saved book into a short posting flow so ratings and reactions feel easy to
+                share instead of like work.
+              </p>
+            </div>
+
+            <div class="showcase-visual">
+              <img
+                class="showcase-shot"
+                src="assets/mockups/create_post.png"
+                alt="BookNook create post screen for selecting a saved book from the library"
+                width="1080"
+                height="2424"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </article>
+
+          <article class="showcase-panel" data-reveal>
+            <div class="showcase-copy">
+              <span class="showcase-label">Library</span>
+              <h3>Show shelves that feel personal, organized, and satisfying to grow.</h3>
+              <p>
+                Strong covers, clear shelf names, and visible counts make the app feel worth coming
+                back to.
+              </p>
+            </div>
+
+            <div class="showcase-visual">
+              <img
+                class="showcase-shot"
+                src="assets/mockups/library.png"
+                alt="BookNook library screen showing shelf snapshot, trending books, and saved titles"
+                width="1080"
+                height="2424"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </article>
+
+          <article class="showcase-panel showcase-panel--wide" data-reveal>
+            <div class="showcase-copy">
+              <span class="showcase-label">Profile</span>
+              <h3>Let visitors picture their own reading identity inside the app.</h3>
+              <p>
+                Profiles combine shelves, taste, and activity so the app feels social, personal, and
+                ready to keep using after the first visit.
+              </p>
+            </div>
+
+            <div class="showcase-visual">
+              <img
+                class="showcase-shot showcase-shot--wide"
+                src="assets/mockups/profile%20page.png"
+                alt="BookNook profile screen with reader stats, shelf tabs, and saved books"
+                width="1080"
+                height="2424"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container value-grid">
+        <div class="value-copy" data-reveal>
+          <p class="eyebrow">Made for Android</p>
+          <h2>Built for the phone in your hand, not adapted from somewhere else.</h2>
+          <p>
+            BookNook is designed around vertical browsing, quick taps, and a personal reading flow.
+            Every screen is built to feel natural on Android, from the first discovery scroll to the
+            shelves you build over time.
+          </p>
+          <blockquote class="value-quote">
+            “A reading app should feel obvious before the first save.”
+          </blockquote>
+        </div>
+
+        <div class="manifesto-grid">
+          <article class="manifesto-card" data-reveal>
+            <h3>Visual before verbal</h3>
+            <p>
+              Lead with attractive screens, readable covers, and clean hierarchy so the product
+              feels appealing in two seconds.
+            </p>
+          </article>
+
+          <article class="manifesto-card" data-reveal>
+            <h3>Fast enough for curiosity</h3>
+            <p>
+              New users should be able to spot a book, save it, and understand the app before they
+              ever hit friction.
+            </p>
+          </article>
+
+          <article class="manifesto-card" data-reveal>
+            <h3>Personal from the first save</h3>
+            <p>
+              Shelves, quick notes, and profiles turn a simple install into a reading space that
+              already feels theirs.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="android">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Android first</p>
+          <h2>Built to feel simple, fast, and familiar on Android.</h2>
+          <p>
+            Everything is built around the moments that matter most on a phone: browsing, saving,
+            and coming back to your next read.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card" data-reveal>
+            <h3 class="benefit-title">Vertical-first browsing</h3>
+            <p class="benefit-text">
+              The product works best when it feels made for the same fast thumb-driven browsing
+              habits people already use every day.
+            </p>
+          </article>
+
+          <article class="benefit-card" data-reveal>
+            <h3 class="benefit-title">Guest preview option</h3>
+            <p class="benefit-text">
+              Let people explore the feed before they fully commit so the first step into the app
+              feels easy.
+            </p>
+          </article>
+
+          <article class="benefit-card" data-reveal>
+            <h3 class="benefit-title">Quick to get started</h3>
+            <p class="benefit-text">
+              A clean first session makes it easy to open the app, find a book, and know what to do
+              next without extra friction.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent" id="faq">
+      <div class="container faq-shell">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">FAQ</p>
+          <h2>Everything a new visitor may want to know before trying BookNook.</h2>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item" data-reveal>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What is BookNook?</span>
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                BookNook is an Android app for discovering books, saving them to shelves, sharing
+                quick thoughts, and following readers with similar taste.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-reveal>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is BookNook only on Android?</span>
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes. BookNook is currently designed for Android, and the full experience is built
+                around that mobile flow.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-reveal>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What can I do inside the app?</span>
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                You can discover books through the feed, search by title or author, save books to
+                shelves, rate or react to them, and build a profile around your reading taste.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-reveal>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can people try it before making a full profile?</span>
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Yes. Guest preview lets new users explore the app before they commit to setting
+                everything up.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-reveal>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I get access?</span>
+              <span class="faq-symbol" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <p>
+                Tap Download Now to get the Android APK directly and install BookNook right away.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="container">
+        <div class="cta-panel" data-reveal>
+          <div class="cta-copy">
+            <p class="eyebrow eyebrow--light">Download BookNook now</p>
+            <h2>Ready to install BookNook on Android?</h2>
+            <p>
+              Download the latest Android APK directly and start exploring BookNook without waiting
+              for an invite.
+            </p>
+
+            <div class="store-pills" aria-label="Platform availability">
+              <span>Android APK</span>
+              <span>Visual discovery</span>
+              <span>52 MB download</span>
+            </div>
+          </div>
+
+          <div class="cta-form-wrap download-card">
+            <a
+              class="button button--light download-button"
+              href="assets/downloads/booknook-release.apk"
+              download="BookNook-Android.apk"
+            >
+              Download Now
+            </a>
+            <p class="form-caption">
+              Direct APK download for Android devices. If Android asks, allow installs from this
+              source to finish setup.
+            </p>
+            <p class="download-note">File included on this site: BookNook-Android.apk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="#top">
+          <span class="brand-mark" aria-hidden="true">Bn</span>
+          <span class="brand-name">BookNook</span>
+        </a>
+        <p>
+          Android reading app for visual book discovery, fast saves, and a library that feels
+          personal.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#top">About</a>
+        <a href="#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:hello@booknook.app">Contact</a>
+        <a href="#" aria-label="Instagram placeholder">Instagram</a>
+        <a href="#" aria-label="X placeholder">X</a>
+        <a href="assets/downloads/booknook-release.apk" download="BookNook-Android.apk">Download Now</a>
+        <a href="#download">Download APK</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Use for: the search showcase section.
+Export name: 03-search-results.png
+Best format: PNG
+Best shape: portrait Android screenshot
+
+Show:
+- the search bar
+- book or author results
+- at least one reader/profile result if available
+- enough spacing that the screen feels easy to scan
+
+Avoid:
+- blank search state
+- too many tiny filters
+- unreadable result rows
+
+Goal:
+Show that people can find something useful quickly.

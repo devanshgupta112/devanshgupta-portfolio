@@ -1,0 +1,18 @@
+Use for: the profile showcase section.
+Export name: 05-profile-screen.png
+Best format: PNG
+Best shape: portrait Android screenshot
+
+Show:
+- avatar or profile header
+- short bio or taste summary
+- shelves, stats, or recent activity
+- enough personality that the screen feels social
+
+Avoid:
+- blank profile fields
+- broken image spaces
+- extra admin controls
+
+Goal:
+Help visitors imagine their own reading identity inside the app.

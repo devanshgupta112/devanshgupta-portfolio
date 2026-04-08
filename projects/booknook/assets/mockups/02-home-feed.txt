@@ -1,0 +1,18 @@
+Use for: the wide home feed showcase section.
+Export name: 02-home-feed.png
+Best format: PNG
+Best shape: portrait screenshot with enough detail to crop into a wider panel
+
+Show:
+- multiple book cards or posts
+- clear cover art
+- short reactions or quick notes
+- one visible save or open action
+
+Avoid:
+- too many overlays
+- low-contrast text
+- crowded top bars
+
+Goal:
+Make discovery feel fast, visual, and easy to scroll.
