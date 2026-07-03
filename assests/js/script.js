@@ -1,142 +1,140 @@
 /* ==========================================================================
    INDEX/PROJECTS UI ENHANCEMENTS - MAIN SCRIPT
    Author: Devansh Gupta
-   Purpose: JS for Mobile Nav, Theme, Scroll, Active Link, Animations, UX
+   Purpose: Global JS for Mobile Nav, Theme Toggle, Scroll, and UX Animations
    ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. INITIALIZE THEME (DARK MODE BY DEFAULT)
+    initTheme();
+
+    // 2. MOBILE NAVIGATION TOGGLE
+    initMobileMenu();
+
+    // 3. SMOOTH SCROLL FOR ANCHOR LINKS
+    initSmoothScroll();
+
+    // 4. SET ACTIVE NAVIGATION LINK BASED ON CURRENT PAGE
+    initActivePageLink();
+
+    // 5. INTERSECTION OBSERVER FOR CARD ANIMATIONS
+    initCardAnimations();
+
+    // 6. DYNAMIC YEAR FOR COPYRIGHT
+    initCopyrightYear();
+
+    // 7. PRESERVE SCROLL POSITION ACROSS PAGE RELOADS
+    initScrollPreserve();
+
+    // 8. PREVENT FORM SCROLL JUMP (AJAX STYLE FORMS)
+    initFormDefaults();
+
+    // 9. BUTTON CLICK DEFAULTS
+    initButtonDefaults();
+});
 
 /* ==========================================================================
-   1. MOBILE NAVIGATION TOGGLE
+   THEME MANAGEMENT (DARK MODE DEFAULT WITH LOCALSTORAGE)
    ========================================================================== */
-const mobileMenu = document.getElementById('mobile-menu');
-const navMenu = document.getElementById('nav-menu');
-const html = document.documentElement;
+function initTheme() {
+    const html = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    
+    // Default to dark mode if not specified
+    if (storedTheme === 'light') {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        updateToggleIcons('light');
+    } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        updateToggleIcons('dark');
+    }
 
-if (mobileMenu && navMenu) {
-    mobileMenu.addEventListener('click', (e) => {
-        e.preventDefault();
-        mobileMenu.classList.toggle('active');
-        navMenu.classList.toggle('active');
+    // Attach click listeners to all theme toggle buttons
+    const themeToggles = document.querySelectorAll('.theme-toggle-btn');
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+                updateToggleIcons('light');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateToggleIcons('dark');
+            }
+        });
+    });
+}
+
+function updateToggleIcons(theme) {
+    const icons = document.querySelectorAll('.theme-toggle-btn i');
+    icons.forEach(icon => {
+        if (theme === 'light') {
+            icon.className = 'fas fa-moon'; // Show moon icon in light mode
+        } else {
+            icon.className = 'fas fa-sun';  // Show sun icon in dark mode
+        }
     });
 }
 
 /* ==========================================================================
-   2. THEME TOGGLE (LIGHT/DARK)
+   MOBILE NAVIGATION TOGGLE
    ========================================================================== */
+function initMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
 
-
-/* ==========================================================================
-   3. SMOOTH SCROLL FOR ANCHOR LINKS
-   ========================================================================== */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const target = document.querySelector(targetId);
-
-        if (target) {
-            const headerOffset = 80; // For fixed navbar
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }
-
-        // Close mobile nav on anchor click
-        if (navMenu && mobileMenu) {
-            navMenu.classList.remove('active');
-            mobileMenu.classList.remove('active');
-        }
-    });
-});
-
-/* ==========================================================================
-   4. ACTIVE NAVIGATION LINK ON SCROLL
-   ========================================================================== */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        if (window.pageYOffset >= section.offsetTop - 200) {
-            current = section.id;
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (current && link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-/* ==========================================================================
-   5. NAVBAR BACKGROUND ON SCROLL
-   ========================================================================== */
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        const bg = getComputedStyle(html).getPropertyValue('--color-background');
-        navbar.style.background =
-            window.scrollY > 100 ? `${bg}dd` : bg;
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
     }
-});
+}
 
 /* ==========================================================================
-   6. INTERSECTION OBSERVER FOR CARD ANIMATIONS
+   SMOOTH SCROLL FOR ANCHOR LINKS
    ========================================================================== */
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            e.preventDefault();
+            const target = document.querySelector(targetId);
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+            if (target) {
+                const headerOffset = 80; // For fixed navbar
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+
+            // Close mobile nav on anchor click
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu && mobileMenu) {
+                navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
     });
-}, observerOptions);
-
-document.querySelectorAll('.blog-card, .project-card, .info-card, .mini-section').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
+}
 
 /* ==========================================================================
-   7. PRESERVE SCROLL POSITION ACROSS PAGE RELOADS
+   SET ACTIVE NAVIGATION LINK BASED ON PAGE
    ========================================================================== */
-window.addEventListener('beforeunload', function() {
-    sessionStorage.setItem('scrollPosition', window.scrollY);
-});
-window.addEventListener('load', function() {
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    if (scrollPosition) {
-        window.scrollTo(0, parseInt(scrollPosition));
-        sessionStorage.removeItem('scrollPosition');
-    }
-});
-
-/* ==========================================================================
-   8. DYNAMIC YEAR FOR COPYRIGHT
-   ========================================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-    const currentYear = new Date().getFullYear();
-    const copyright =
-        document.querySelector('.footer-text p, .footer-text');
-    if (copyright) {
-        copyright.textContent = `© ${currentYear} Devansh Gupta. All rights reserved.`;
-    }
-});
-
-/* ==========================================================================
-   9. ENHANCED PAGE NAVIGATION (SET ACTIVE LINK BASED ON PAGE)
-   ========================================================================== */
-document.addEventListener('DOMContentLoaded', function () {
+function initActivePageLink() {
     const navLinks = document.querySelectorAll('.nav-link');
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
@@ -148,32 +146,82 @@ document.addEventListener('DOMContentLoaded', function () {
             link.classList.add('active');
         }
     });
-});
+}
 
 /* ==========================================================================
-   10. PREVENT FORM SCROLL JUMP (AJAX STYLE FORMS)
+   INTERSECTION OBSERVER FOR CARD ANIMATIONS
    ========================================================================== */
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Put your AJAX/form-handling logic here
-        // e.g. send form data via fetch/XHR, show success, etc.
-        console.log('Form submitted');
-        return false;
+function initCardAnimations() {
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '0px 0px -30px 0px'
+    };
+
+    const cardObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.blog-card, .project-card, .info-card, .mini-section, .overview-card, .cert-item, .contact-method, .download-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        cardObserver.observe(el);
     });
-});
+}
 
 /* ==========================================================================
-   11. BUTTON CLICK DEFAULTS
+   DYNAMIC YEAR FOR COPYRIGHT
    ========================================================================== */
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function(e) {
-        if (!this.type || this.type === 'button') {
+function initCopyrightYear() {
+    const copyright = document.querySelector('.footer-text p, .footer-text');
+    if (copyright) {
+        const currentYear = new Date().getFullYear();
+        copyright.innerHTML = `&copy; ${currentYear} Devansh Gupta. All rights reserved.`;
+    }
+}
+
+/* ==========================================================================
+   PRESERVE SCROLL POSITION ACROSS PAGE RELOADS
+   ========================================================================== */
+function initScrollPreserve() {
+    window.addEventListener('beforeunload', () => {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+    });
+    
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+        window.scrollTo(0, parseInt(scrollPosition));
+        sessionStorage.removeItem('scrollPosition');
+    }
+}
+
+/* ==========================================================================
+   PREVENT FORM SCROLL JUMP
+   ========================================================================== */
+function initFormDefaults() {
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-        }
+            console.log('Form submission intercepted');
+            return false;
+        });
     });
-});
+}
 
 /* ==========================================================================
-   END OF MAIN SCRIPT
+   BUTTON CLICK DEFAULTS
    ========================================================================== */
+function initButtonDefaults() {
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            if (!this.type || this.type === 'button') {
+                e.preventDefault();
+            }
+        });
+    });
+}

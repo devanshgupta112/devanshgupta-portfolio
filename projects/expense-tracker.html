@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Devansh Gupta</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assests/css/global.css">
+    <link rel="stylesheet" href="../assests/css/tech.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-secondary);
+        }
+        .project-details-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: var(--rounded-lg);
+            margin-top: var(--rounded-lg);
+        }
+        .details-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--rounded-default);
+        }
+        .back-btn-container {
+            margin-bottom: var(--rounded-default);
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .spec-table td {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .spec-table td:first-child {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            color: var(--text-primary);
+            width: 40%;
+        }
+        @media (max-width: 900px) {
+            .project-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============== NAVIGATION BAR ============== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html" class="label-mono">Devansh Gupta</a></h2>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blogs.html" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tech-projects.html" class="nav-link active">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../jobs.html" class="nav-link">For Recruiters</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============== MAIN DETAILS ============== -->
+    <main class="container section">
+        <div class="back-btn-container">
+            <a href="../tech-projects.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+
+        <h1 class="display-xl" style="color: var(--text-primary); margin-bottom: 1rem;">Expense Tracker App</h1>
+        <p class="body-lg" style="margin-bottom: 2rem;">A clean, responsive, vibe-coded mobile application built in Flutter with robust offline-first SQLite persistence.</p>
+
+        <div class="project-details-grid">
+            <!-- Left Column: Details -->
+            <div class="details-col">
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">Project Overview</h2>
+                    <p class="body-md">
+                        This Expense Tracker is designed to simplify personal finance bookkeeping. Built with cross-platform Dart & Flutter layouts, the application provides an intuitive panel to log transactions, manage budget categories, and observe monthly expenditure breakdowns.
+                    </p>
+                    <p class="body-md">
+                        The architecture is completely offline-first, implementing a local SQLite helper service to query, index, and save logs securely on-device without external cloud lag.
+                    </p>
+                </div>
+
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">Database & State Architecture</h2>
+                    <p class="body-md">
+                        The app uses structured SQLite schemas to model transactions. An asynchronous repository pattern manages CRUD queries, updating UI streams reactively upon database alterations.
+                    </p>
+                    <pre><span class="keyword">class</span> <span class="string">DatabaseHelper</span> {
+  <span class="keyword">static</span> Database? _database;
+  
+  Future&lt;Database&gt; <span class="keyword">get</span> database <span class="keyword">async</span> {
+    <span class="keyword">if</span> (_database != <span class="keyword">null</span>) <span class="keyword">return</span> _database!;
+    _database = <span class="keyword">await</span> _initDatabase();
+    <span class="keyword">return</span> _database!;
+  }
+  
+  Future&lt;List&lt;Map&lt;String, dynamic&gt;&gt;&gt; getTransactions() <span class="keyword">async</span> {
+    <span class="keyword">final</span> db = <span class="keyword">await</span> database;
+    <span class="keyword">return</span> <span class="keyword">await</span> db.query(<span class="string">'transactions'</span>, orderBy: <span class="string">'date DESC'</span>);
+  }
+}</pre>
+                </div>
+            </div>
+
+            <!-- Right Column: Info & Specs -->
+            <div class="details-col">
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">App Specifications</h2>
+                    <table class="spec-table">
+                        <tr>
+                            <td>Core Stack</td>
+                            <td>Flutter, Dart</td>
+                        </tr>
+                        <tr>
+                            <td>Database Persistence</td>
+                            <td>SQLite (sqflite)</td>
+                        </tr>
+                        <tr>
+                            <td>State Management</td>
+                            <td>Provider Pattern</td>
+                        </tr>
+                        <tr>
+                            <td>UI Paradigm</td>
+                            <td>Material Design / Minimal Dark</td>
+                        </tr>
+                        <tr>
+                            <td>Distribution Format</td>
+                            <td>Android APK Installer</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card-aesthetic" style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 class="label-mono">Project Links</h3>
+                    <a href="https://github.com/devanshgupta112/Expense-Tracker#readme" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                    <a href="../assests/apk/expense-tracker.apk" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i> Download Android APK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p class="body-md">&copy; 2025 Devansh Gupta. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

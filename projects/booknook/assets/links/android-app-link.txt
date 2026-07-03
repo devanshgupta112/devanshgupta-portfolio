@@ -1,9 +1,0 @@
-Paste your Android install or invite link on the line below:
-
-https://
-
-Update these places after you have the real link:
-- header CTA in index.html
-- hero Try Now button in index.html
-- footer Try Now link in index.html
-- header CTA in privacy.html if you want it to go live there too

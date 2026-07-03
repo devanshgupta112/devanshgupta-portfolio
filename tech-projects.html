@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Projects - Devansh Gupta | Portfolio</title>
     
-    <!-- IMPORTANT: Update this to match your actual CSS filename -->
+    <!-- Styles -->
+    <link rel="stylesheet" href="assests/css/global.css">
     <link rel="stylesheet" href="assests/css/tech.css">
-    <!-- OR if you renamed it: -->
-    <!-- <link rel="stylesheet" href="assets/css/tech-projects.css"> -->
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Theme Color Meta -->
     <meta name="theme-color" content="#2563eb">
 </head>
 <body>
-    <!-- Skip to Main Content Link for Accessibility -->
-   
-
     <!-- ============== NAVIGATION BAR ============== -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
@@ -35,12 +29,12 @@
                 </li>
                 <li class="nav-item" role="none">
                     <a href="blogs.html" class="nav-link" role="menuitem">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                        <span>Stories</span>
+                        <i class="fas fa-blog" aria-hidden="true"></i>
+                        <span>Blogs</span>
                     </a>
                 </li>
                 <li class="nav-item" role="none">
-                    <a href="tech-projects.html" class="nav-link active" role="menuitem" aria-current="page">
+                    <a href="tech-projects.html" class="nav-link" role="menuitem" aria-current="page">
                         <i class="fas fa-code" aria-hidden="true"></i>
                         <span>Tech Projects</span>
                     </a>
@@ -54,6 +48,9 @@
             </ul>
             
             <div class="nav-controls">
+                <button class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
                 <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
                     <span class="bar" aria-hidden="true"></span>
                     <span class="bar" aria-hidden="true"></span>
@@ -72,7 +69,7 @@
                     <h1 id="hero-title" class="page-title">Tech Projects</h1>
                     <p class="page-subtitle">A showcase of my technical skills, creativity, and problem-solving abilities</p>
                     
-                        <div class="hero-stats" role="region" aria-label="Project statistics">
+                    <div class="hero-stats" role="region" aria-label="Project statistics">
                         <div class="stat-item">
                             <span class="stat-number" aria-label="Number of projects">11+</span>
                             <span class="stat-label">Projects</span>
@@ -82,8 +79,8 @@
                             <span class="stat-label">Technologies</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" aria-label="Years of experience">0 Years</span>
-                            <span class="stat-label">Currently Fresher</span>
+                            <span class="stat-number" aria-label="Academic Background">AIML Spec</span>
+                            <span class="stat-label">B.Tech Specialization</span>
                         </div>
                     </div>
                 </div>
@@ -93,63 +90,27 @@
         <!-- ============== PROJECT FILTERS ============== -->
         <section class="project-filters" aria-labelledby="filters-title">
             <div class="container">
-                <h2 id="filters-title" class="sr-only">Filter projects by technology</h2>
+                <h2 id="filters-title" class="sr-only">Filter projects by category</h2>
                 <div class="filter-controls" role="group" aria-label="Project category filters">
                     <button class="filter-btn active" data-filter="all" aria-pressed="true">
                         <i class="fas fa-layer-group" aria-hidden="true"></i>
                         All Projects
                     </button>
-                    <button class="filter-btn" data-filter="cpp" aria-pressed="false">
-                        <i class="fab fa-cuttlefish" aria-hidden="true"></i>
-                        C++
+                    <button class="filter-btn" data-filter="self-made" aria-pressed="false">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        Self-Made (Serious)
                     </button>
-                    <button class="filter-btn" data-filter="python" aria-pressed="false">
-                        <i class="fab fa-python" aria-hidden="true"></i>
-                        Python
-                    </button>
-                    <button class="filter-btn" data-filter="javascript" aria-pressed="false">
-                        <i class="fab fa-js-square" aria-hidden="true"></i>
-                        JavaScript
-                    </button>
-                    <button class="filter-btn" data-filter="react" aria-pressed="false">
-                        <i class="fab fa-react" aria-hidden="true"></i>
-                        React
-                    </button>
-                    <button class="filter-btn" data-filter="nodejs" aria-pressed="false">
-                        <i class="fab fa-node-js" aria-hidden="true"></i>
-                        Node.js
-                    </button>
-                    <button class="filter-btn" data-filter="flutter" aria-pressed="false">
-                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                        Flutter
-                    </button>
-                    <button class="filter-btn" data-filter="database" aria-pressed="false">
-                        <i class="fas fa-database" aria-hidden="true"></i>
-                        Database
-                    </button>
-                    <button class="filter-btn" data-filter="datascience" aria-pressed="false">
-                        <i class="fas fa-chart-line" aria-hidden="true"></i>
-                        Data Science
+                    <button class="filter-btn" data-filter="vibe-coded" aria-pressed="false">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                        Vibe-Coded
                     </button>
                     <button class="filter-btn" data-filter="machine-learning" aria-pressed="false">
                         <i class="fas fa-brain" aria-hidden="true"></i>
                         Machine Learning
                     </button>
-                    <button class="filter-btn" data-filter="visualization" aria-pressed="false">
-                        <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                        Data Visualization
-                    </button>
-                    <button class="filter-btn" data-filter="cloud" aria-pressed="false">
-                        <i class="fas fa-cloud" aria-hidden="true"></i>
-                        Cloud/Deployment
-                    </button>
-                    <button class="filter-btn" data-filter="tools" aria-pressed="false">
-                        <i class="fas fa-tools" aria-hidden="true"></i>
-                        Dev Tools
-                    </button>
-                    <button class="filter-btn" data-filter="api" aria-pressed="false">
-                        <i class="fas fa-plug" aria-hidden="true"></i>
-                        APIs
+                    <button class="filter-btn" data-filter="software-engineering" aria-pressed="false">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        Software Engineering
                     </button>
                 </div>
                 
@@ -163,308 +124,143 @@
         <!-- ============== ALL PROJECTS GRID ============== -->
         <section class="all-projects" aria-labelledby="projects-title">
             <div class="container">
-                <h2 id="projects-title" class="section-title">All Projects</h2>
+                <h2 id="projects-title" class="section-title">Portfolio Projects</h2>
                 
                 <div class="projects-wrapper">
-                    <div class="projects-scroll-container" id="projectsScrollContainer" role="region" aria-label="Projects list" tabindex="0">
+                    <!-- SELF-MADE GROUP -->
+                    <div class="project-group-wrapper" style="margin-bottom: 4rem;">
+                        <h3 class="headline-md" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; color: var(--text-primary);">
+                            Self-Made / Serious Projects
+                        </h3>
                         <div class="projects-grid">
                             
-                            <!-- ============== PROJECT 1: Weather Data Analysis (ACTIVE) ============== -->
-                            <article class="project-card" data-category="python visualization datascience" role="article" tabindex="0">
+                            <!-- PROJECT 1: FridayLang (C++) -->
+                            <article class="project-card card-aesthetic" data-category="self-made software-engineering cpp" role="article" tabindex="0">
+                                <div class="project-image">
+                                    <div class="project-placeholder">
+                                        <i class="fas fa-terminal" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="https://github.com/devanshgupta112/Friday-" class="project-link" aria-label="View FridayLang source code" title="Source Code" target="_blank" rel="noopener noreferrer">
+                                                <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="projects/friday.html" class="project-link" aria-label="Open FridayLang Page" title="Detailed Case Study">
+                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <span class="status-badge live">C++17 Release</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h3 class="project-title">FridayLang — Custom Scripting Language</h3>
+                                    <p class="project-description">
+                                        A lightweight, high-performance interpreted scripting language written in C++17. Features 15 unified C++ STL-like dynamic containers, a core mathematical algorithm namespace, first-class functions, and object-oriented programming.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">C++17</span>
+                                        <span class="tech-tag">Interpreter</span>
+                                        <span class="tech-tag">STL Containers</span>
+                                    </div>
+                                    <div class="project-metrics" style="display: flex; gap: 1.5rem; margin-top: auto; padding-top: 1rem;">
+                                        <div class="metric">
+                                            <i class="fab fa-github" aria-hidden="true"></i>
+                                            <a href="https://github.com/devanshgupta112/Friday-" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 500;">Source Code</a>
+                                        </div>
+                                        <div class="metric">
+                                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                            <a href="projects/friday.html" style="color: var(--color-primary); font-weight: 500;">Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- PROJECT 2: 127M LLM (PyTorch) -->
+                            <article class="project-card card-aesthetic" data-category="self-made machine-learning software-engineering" role="article" tabindex="0">
+                                <div class="project-image">
+                                    <div class="project-placeholder">
+                                        <i class="fas fa-robot" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="https://github.com/devansh-112" class="project-link" aria-label="View LLM source code" title="Source Code" target="_blank" rel="noopener noreferrer">
+                                                <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="projects/llm-scratch.html" class="project-link" aria-label="Open LLM Page" title="Detailed Case Study">
+                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <span class="status-badge live">127M Parameter</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h3 class="project-title">127M LLM Trained From Scratch</h3>
+                                    <p class="project-description">
+                                        Decoder-only transformer compiled and trained in PyTorch, developing a custom Byte Pair Encoding (BPE) tokenizer from scratch. Scaled raw text files into a conversational chatbot capable of answering questions.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">PyTorch</span>
+                                        <span class="tech-tag">BPE Tokenizer</span>
+                                    </div>
+                                    <div class="project-metrics" style="display: flex; gap: 1.5rem; margin-top: auto; padding-top: 1rem;">
+                                        <div class="metric">
+                                            <i class="fab fa-github" aria-hidden="true"></i>
+                                            <a href="https://github.com/devansh-112" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 500;">Source Code</a>
+                                        </div>
+                                        <div class="metric">
+                                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                            <a href="projects/llm-scratch.html" style="color: var(--color-primary); font-weight: 500;">Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- PROJECT 3: Weather Analysis (Python) -->
+                            <article class="project-card card-aesthetic" data-category="self-made datascience python" role="article" tabindex="0">
                                 <div class="project-image">
                                     <div class="project-placeholder">
                                         <i class="fas fa-cloud-sun" aria-hidden="true"></i>
                                     </div>
                                     <div class="project-overlay">
                                         <div class="project-links">
-                                            <a href="#" class="project-link" aria-label="View Weather Data Analysis project" title="View Project">
-                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="https://github.com/devansh-112/Weather-Data-Analysis-Dashboard.git" class="project-link" aria-label="View source code on GitHub" title="Source Code" target="_blank" rel="noopener noreferrer">
+                                            <a href="https://github.com/devansh-112/Weather-Data-Analysis-Dashboard.git" class="project-link" aria-label="View Weather Dashboard source code" title="Source Code" target="_blank" rel="noopener noreferrer">
                                                 <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="projects/weather-analysis.html" class="project-link" aria-label="Open Weather Analysis Page" title="Detailed Case Study">
+                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="project-status">
-                                        <span class="status-badge development">In Development</span>
+                                        <span class="status-badge development">Data Science</span>
                                     </div>
                                 </div>
                                 
                                 <div class="project-content">
                                     <h3 class="project-title">Weather Data Analysis Dashboard</h3>
                                     <p class="project-description">
-                                        This project analyzes weather data from the last 3 years using Python, NumPy, and Matplotlib to create interactive graph visualizations and statistical insights.
+                                        Processes weather data from the last 3 years using Python, NumPy, and Pandas to output visual insights, regional temperature averages, and climate correlations.
                                     </p>
                                     <div class="project-tech">
-                                        <span class="tech-tag python">Python</span>
-                                        <span class="tech-tag">Matplotlib</span>
-                                        <span class="tech-tag">NumPy</span>
+                                        <span class="tech-tag">Python</span>
                                         <span class="tech-tag">Pandas</span>
+                                        <span class="tech-tag">NumPy</span>
                                     </div>
-                                    <div class="project-metrics">
+                                    <div class="project-metrics" style="display: flex; gap: 1.5rem; margin-top: auto; padding-top: 1rem;">
                                         <div class="metric">
-                                            <i class="fas fa-chart-line" aria-hidden="true"></i>
-                                            <span>Data Analysis</span>
-                                        </div>
-                                        <div class="metric">
-                                            <i class="fas fa-calendar" aria-hidden="true"></i>
-                                            <span>3 Years Data</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- ============== PROJECT 2: Javlin Language (ACTIVE) ============== -->
-<article class="project-card" data-category="python javascript tools" role="article" tabindex="0">
-    <div class="project-image">
-        <div class="project-placeholder">
-            <i class="fas fa-terminal" aria-hidden="true"></i>
-        </div>
-        <div class="project-overlay">
-           <div class="project-links">
-    <a 
-        href="https://javlin1.netlify.app/"
-        class="project-link"
-        aria-label="Open Javlin Playground"
-        title="Live Playground"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <i class="fas fa-play"></i>
-    </a>
-
-    <a 
-        href="https://github.com/devansh-112/Javlin"
-        class="project-link"
-        aria-label="View Javlin Source Code"
-        title="Source Code"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <i class="fab fa-github"></i>
-    </a>
-</div>
-
-        </div>
-        <div class="project-status">
-            <span class="status-badge development">Active Project</span>
-        </div>
-    </div>
-
-    <div class="project-content">
-        <h3 class="project-title">Javlin — Custom Toy Programming Language</h3>
-        <p class="project-description">
-            Javlin is a minimal interpreted programming language built in Python, featuring its own lexer, parser, and runtime environment. It supports variables, arithmetic operations, and control flow with loops. A web-based playground built using HTML, CSS, and JavaScript allows users to write, execute, and visualize code directly in the browser.
-        </p>
-        <div class="project-tech">
-            <span class="tech-tag python">Python</span>
-            <span class="tech-tag javascript">JavaScript</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">HTML/CSS</span>
-        </div>
-        <div class="project-metrics">
-            <div class="metric">
-                <i class="fas fa-code" aria-hidden="true"></i>
-                <span>Custom Lexer & Interpreter</span>
-            </div>
-            <div class="metric">
-                <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                <span>Interactive Playground</span>
-            </div>
-        </div>
-    </div>
-</article>
-<article class="project-card" data-category="python visualization datascience" role="article" tabindex="0">
-    <div class="project-image">
-        <div class="project-placeholder">
-            <i class="fas fa-chart-area" aria-hidden="true"></i>
-        </div>
-
-        <div class="project-overlay">
-            <div class="project-links">
-                <a href="projects/data_science_projects/index.html" class="project-link" aria-label="Open Data Analysis Dashboard" title="View Project">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                </a>
-                <a href="#" 
-                   class="project-link" 
-                   aria-label="View Data Analysis Dashboard source code on GitHub" 
-                   title="Source Code" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-status">
-            <span class="status-badge development">Coming soon</span>
-        </div>
-    </div>
-    
-    <div class="project-content">
-        <h3 class="project-title">Data Analysis Dashboard</h3>
-
-        <p class="project-description">
-            This website is a dedicated showcase of my work in data analysis, visualization, and exploratory data science, built to demonstrate how raw data can be transformed into meaningful insights and actionable stories.
-Across the projects featured here, I work with real-world datasets spanning multiple domains such as weather, business metrics, and time-series data. Each project reflects my end-to-end approach to data analysis—starting from data collection and cleaning, moving through exploratory analysis, and culminating in clear, insight-driven visualizations and dashboards.
-        </p>
-
-        <div class="project-tech">
-            <span class="tech-tag python">Python</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">Sql</span>
-            <span class="tech-tag">Tableau</span>
-        </div>
-
-        <div class="project-metrics">
-            <div class="metric">
-                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                <span>Visual Analytics</span>
-            </div>
-            <div class="metric">
-                <i class="fas fa-database" aria-hidden="true"></i>
-                <span>3 Years of Weather Data</span>
-            </div>
-        </div>
-    </div>
-</article>
-
-                            <article class="project-card" id="project-booknook" data-category="flutter tools cloud" role="article" tabindex="0">
-                                <div class="project-image project-image--booknook">
-                                    <img
-                                        class="project-thumb"
-                                        src="projects/booknook/assets/mockups/home_feed.png"
-                                        alt="BookNook Android app feed preview"
-                                    >
-                                    <div class="project-image-badge">
-                                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                                        <span>Hosted on portfolio</span>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-links">
-                                            <a href="projects/booknook/index.html" class="project-link" aria-label="Open BookNook project page" title="View Project">
-                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="projects/booknook/assets/downloads/booknook-release.apk" class="project-link" aria-label="Download BookNook APK" title="Download APK" download="BookNook-Android.apk">
-                                                <i class="fas fa-download" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="project-status">
-                                        <span class="status-badge live">Live on Portfolio</span>
-                                    </div>
-                                </div>
-
-                                <div class="project-content">
-                                    <h3 class="project-title">BookNook</h3>
-                                    <p class="project-description">
-                                        BookNook is a Flutter reading app paired with a polished static launch page. Inside the hosted project page, visitors can explore the product screens, understand the Android-first experience, and download the latest APK directly.
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Flutter</span>
-                                        <span class="tech-tag">Dart</span>
-                                        <span class="tech-tag">HTML/CSS</span>
-                                        <span class="tech-tag">GitHub Pages</span>
-                                    </div>
-                                    <div class="project-metrics">
-                                        <div class="metric">
-                                            <i class="fas fa-rocket" aria-hidden="true"></i>
-                                            <span>Hosted Landing Page</span>
+                                            <i class="fab fa-github" aria-hidden="true"></i>
+                                            <a href="https://github.com/devansh-112/Weather-Data-Analysis-Dashboard.git" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 500;">Source Code</a>
                                         </div>
                                         <div class="metric">
-                                            <i class="fas fa-file-download" aria-hidden="true"></i>
-                                            <span>Direct APK Download</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- ============== PROJECT 3: Expense Tracker ============== -->
-                            <article class="project-card" data-category="flutter database tools" role="article" tabindex="0">
-                                <div class="project-image">
-                                    <div class="project-placeholder">
-                                        <i class="fas fa-wallet" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-links">
-                                            <a href="https://github.com/devanshgupta112/Expense-Tracker#readme" class="project-link" aria-label="Open Expense Tracker repository" title="View Project" target="_blank" rel="noopener noreferrer">
-                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                                            </a>
-                                            <a href="assests/apk/expense-tracker.apk" class="project-link" aria-label="Download Expense Tracker APK" title="Download APK" download="expense-tracker.apk">
-                                                <i class="fas fa-download" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="project-status">
-                                        <span class="status-badge open-source">Open Source</span>
-                                    </div>
-                                </div>
-
-                                <div class="project-content">
-                                    <h3 class="project-title">Expense Tracker</h3>
-                                    <p class="project-description">
-                                        A Flutter app for tracking daily income and expenses with category-based insights and local persistence for fast, offline-first usage.
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Flutter</span>
-                                        <span class="tech-tag">Dart</span>
-                                        <span class="tech-tag">SQLite</span>
-                                        <span class="tech-tag">State Management</span>
-                                    </div>
-                                    <div class="project-metrics">
-                                        <div class="metric">
-                                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                                            <span>Cross-Platform</span>
-                                        </div>
-                                        <div class="metric">
-                                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
-                                            <span>Budget Insights</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-
-                            <!-- ============== PROJECT 4: More Projects Coming Soon ============== -->
-                            <article class="project-card" data-category="all" role="article" tabindex="0">
-                                <div class="project-image">
-                                    <div class="project-placeholder">
-                                        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="project-overlay">
-                                        <div class="project-links">
-                                            <span class="project-link disabled" aria-label="Coming soon" title="Coming Soon">
-                                                <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-                                            </span>
-                                            <span class="project-link disabled" aria-label="Coming soon" title="Coming Soon">
-                                                <i class="fab fa-github" aria-hidden="true"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="project-status">
-                                        <span class="status-badge coming-soon">Coming Soon</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="project-content">
-                                    <h3 class="project-title">More Projects Coming Soon</h3>
-                                    <p class="project-description">
-                                        I'm currently working on several exciting projects including machine learning applications, web development projects, and data science solutions. Stay tuned for updates!
-                                    </p>
-                                    <div class="project-tech">
-                                        <span class="tech-tag python">Python</span>
-                                        <span class="tech-tag javascript">JavaScript</span>
-                                        <span class="tech-tag cpp">C++</span>
-                                        <span class="tech-tag react">React</span>
-                                    </div>
-                                    <div class="project-metrics">
-                                        <div class="metric">
-                                            <i class="fas fa-clock" aria-hidden="true"></i>
-                                            <span>In Development</span>
-                                        </div>
-                                        <div class="metric">
-                                            <i class="fas fa-rocket" aria-hidden="true"></i>
-                                            <span>Multiple Technologies</span>
+                                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                            <a href="projects/weather-analysis.html" style="color: var(--color-primary); font-weight: 500;">Case Study</a>
                                         </div>
                                     </div>
                                 </div>
@@ -472,20 +268,59 @@ Across the projects featured here, I work with real-world datasets spanning mult
 
                         </div>
                     </div>
-                    
-                    <!-- Scroll Progress Indicator -->
-                    <div class="projects-scroll-indicator" aria-hidden="true">
-                        <div class="projects-scroll-progress" id="projectsScrollProgress"></div>
-                    </div>
-                    
-                    <!-- Scroll Control Buttons -->
-                    <div class="projects-scroll-controls">
-                        <button class="projects-scroll-btn" id="projectsScrollUp" aria-label="Scroll projects up" title="Scroll Up">
-                            <i class="fas fa-chevron-up" aria-hidden="true"></i>
-                        </button>
-                        <button class="projects-scroll-btn" id="projectsScrollDown" aria-label="Scroll projects down" title="Scroll Down">
-                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                        </button>
+
+                    <!-- VIBE-CODED GROUP -->
+                    <div class="project-group-wrapper">
+                        <h3 class="headline-md" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; color: var(--text-primary);">
+                            Vibe-Coded Projects
+                        </h3>
+                        <div class="projects-grid">
+                            
+                            <!-- PROJECT 4: Expense Tracker -->
+                            <article class="project-card card-aesthetic" data-category="vibe-coded flutter software-engineering" role="article" tabindex="0">
+                                <div class="project-image">
+                                    <div class="project-placeholder">
+                                        <i class="fas fa-wallet" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-links">
+                                            <a href="https://github.com/devanshgupta112/Expense-Tracker#readme" class="project-link" aria-label="View Expense Tracker source code" title="Source Code" target="_blank" rel="noopener noreferrer">
+                                                <i class="fab fa-github" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="projects/expense-tracker.html" class="project-link" aria-label="Open Expense Tracker Page" title="Detailed Case Study">
+                                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="project-status">
+                                        <span class="status-badge live">Mobile App</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h3 class="project-title">Expense Tracker Mobile App</h3>
+                                    <p class="project-description">
+                                        A cross-platform Flutter application for personal finance book-keeping. Pairs local SQLite on-device database persistent layers with Category cost analytics.
+                                    </p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Flutter</span>
+                                        <span class="tech-tag">Dart</span>
+                                        <span class="tech-tag">SQLite</span>
+                                    </div>
+                                    <div class="project-metrics" style="display: flex; gap: 1.5rem; margin-top: auto; padding-top: 1rem;">
+                                        <div class="metric">
+                                            <i class="fab fa-github" aria-hidden="true"></i>
+                                            <a href="https://github.com/devanshgupta112/Expense-Tracker#readme" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 500;">Source Code</a>
+                                        </div>
+                                        <div class="metric">
+                                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                            <a href="projects/expense-tracker.html" style="color: var(--color-primary); font-weight: 500;">Case Study</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -496,7 +331,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
             <div class="container">
                 <h2 id="github-title" class="section-title">GitHub Activity</h2>
                 <div class="stats-grid">
-                    <div class="stat-card">
+                    <div class="stat-card card-aesthetic">
                         <div class="stat-icon">
                             <i class="fab fa-github" aria-hidden="true"></i>
                         </div>
@@ -506,7 +341,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
                         </div>
                     </div>
                     
-                    <div class="stat-card">
+                    <div class="stat-card card-aesthetic">
                         <div class="stat-icon">
                             <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
@@ -516,7 +351,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
                         </div>
                     </div>
                     
-                    <div class="stat-card">
+                    <div class="stat-card card-aesthetic">
                         <div class="stat-icon">
                             <i class="fas fa-code-branch" aria-hidden="true"></i>
                         </div>
@@ -526,7 +361,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
                         </div>
                     </div>
                     
-                    <div class="stat-card">
+                    <div class="stat-card card-aesthetic">
                         <div class="stat-icon">
                             <i class="fas fa-users" aria-hidden="true"></i>
                         </div>
@@ -547,7 +382,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
         </section>
     </main>
 
-   <!-- ==================== FOOTER ==================== -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
@@ -556,7 +391,7 @@ Across the projects featured here, I work with real-world datasets spanning mult
                 </div>
                 <div class="footer-links">
                     <a href="index.html">Home</a>
-                    <a href="blogs.html" aria-current="page">Stories</a>
+                    <a href="blogs.html">Blogs</a>
                     <a href="tech-projects.html">Projects</a>
                     <a href="jobs.html">For Recruiters</a>
                 </div>

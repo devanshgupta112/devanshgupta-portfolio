@@ -4,174 +4,350 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Devansh Gupta – Portfolio</title>
+  <title>Devansh Gupta – Data Science & AI/ML Portfolio</title>
+  <meta name="description" content="Portfolio of Devansh Gupta, Data Scientist & AI/ML Engineer. Focused on machine learning architectures, statistical data modeling, and clean code." />
 
   <!-- Styles -->
+  <link rel="stylesheet" href="assests/css/global.css" />
   <link rel="stylesheet" href="assests/css/index.css" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 
 <body>
-<!-- ============== NAVIGATION BAR ============== -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <h2><a href="index.html" aria-label="Devansh Gupta - Go to homepage">Devansh Gupta</a></h2>
-        </div>
-        
-        <ul class="nav-menu" id="nav-menu" role="menubar" aria-hidden="false">
-            <li class="nav-item" role="none">
-                <a href="index.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-home" aria-hidden="true"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="blogs.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                    <span>Stories</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="tech-projects.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-code" aria-hidden="true"></i>
-                    <span>Tech Projects</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="jobs.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-briefcase" aria-hidden="true"></i>
-                    <span>For Recruiters</span>
-                </a>
-            </li>
-        </ul>
-        
-        <div class="nav-controls">
-            <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
-        </div>
+  <!-- ============== FLOATING SOCIALS ============== -->
+  <div class="floating-socials" role="complementary" aria-label="Social media profiles">
+    <a href="https://github.com/devanshgupta" target="_blank" rel="noopener" aria-label="GitHub Profile" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn Profile" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://leetcode.com/u/devanshguta2005/" target="_blank" rel="noopener" aria-label="LeetCode Profile" title="LeetCode">
+      <i class="fas fa-code"></i>
+    </a>
+  </div>
+
+  <!-- ============== NAVIGATION BAR ============== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+          <div class="nav-logo">
+              <h2><a href="index.html" aria-label="Devansh Gupta - Go to homepage" class="label-mono">Devansh Gupta</a></h2>
+          </div>
+          
+          <ul class="nav-menu" id="nav-menu" role="menubar" aria-hidden="false">
+              <li class="nav-item" role="none">
+                  <a href="#home" class="nav-link" role="menuitem">Home</a>
+              </li>
+              <li class="nav-item" role="none">
+                  <a href="#about-work" class="nav-link" role="menuitem">About</a>
+              </li>
+              <li class="nav-item" role="none">
+                  <a href="tech-projects.html" class="nav-link" role="menuitem">Projects</a>
+              </li>
+              <li class="nav-item" role="none">
+                  <a href="#skills-stack" class="nav-link" role="menuitem">Skills</a>
+              </li>
+              <li class="nav-item" role="none">
+                  <a href="blogs.html" class="nav-link" role="menuitem">Blogs</a>
+              </li>
+              <li class="nav-item" role="none">
+                  <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+              </li>
+          </ul>
+          
+          <div class="nav-controls">
+              <button class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                  <i class="fas fa-sun" aria-hidden="true"></i>
+              </button>
+              <a href="jobs.html" class="btn btn-primary" role="button">Hire Me</a>
+              <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
+                  <span class="bar" aria-hidden="true"></span>
+                  <span class="bar" aria-hidden="true"></span>
+                  <span class="bar" aria-hidden="true"></span>
+              </button>
+          </div>
+      </div>
+  </nav>
+
+  <!-- ============== HERO SECTION ============== -->
+  <section id="home" class="hero-section">
+    <!-- Abstract Neural Network SVG background -->
+    <div class="hero-bg-visual" aria-hidden="true">
+      <svg width="100%" height="100%" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--color-primary)" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#141313" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="1000" height="600" fill="url(#bgGlow)" />
+        <g stroke="rgba(255,255,255,0.03)" stroke-width="1.5">
+          <!-- Web connections -->
+          <line x1="200" y1="150" x2="400" y2="250" />
+          <line x1="400" y1="250" x2="600" y2="180" />
+          <line x1="400" y1="250" x2="500" y2="450" />
+          <line x1="600" y1="180" x2="800" y2="350" />
+          <line x1="500" y1="450" x2="800" y2="350" />
+          <line x1="800" y1="350" x2="900" y2="150" />
+          <line x1="200" y1="150" x2="150" y2="380" />
+          <line x1="150" y1="380" x2="500" y2="450" />
+        </g>
+        <g fill="rgba(255,255,255,0.06)">
+          <!-- Node visuals -->
+          <circle cx="200" cy="150" r="4" />
+          <circle cx="400" cy="250" r="6" />
+          <circle cx="600" cy="180" r="5" />
+          <circle cx="500" cy="450" r="5" />
+          <circle cx="800" cy="350" r="7" />
+          <circle cx="900" cy="150" r="4" />
+          <circle cx="150" cy="380" r="4" />
+        </g>
+        <!-- Neural Activation glow highlights -->
+        <g fill="var(--color-primary)" opacity="0.25">
+          <circle cx="400" cy="250" r="8" filter="blur(2px)" />
+          <circle cx="800" cy="350" r="10" filter="blur(2px)" />
+        </g>
+      </svg>
     </div>
-</nav>
 
-  <!-- ============== HOME/HERO SECTION ============== -->
-  <!-- Main landing section with introduction and call-to-action buttons -->
-  <section id="home" class="section home-section">
+    <div class="container hero-container">
+      <div class="hero-header-wrap">
+        <h1 class="display-xl hero-title-giant">DEVANSH GUPTA</h1>
+        <p class="label-mono hero-tagline">Machine Learning Engineer &bull; Software Development Engineer (SDE)</p>
+      </div>
+
+      <!-- Thumbnail Cards row -->
+      <div class="hero-thumbnails-grid">
+        <div class="thumbnail-card card-aesthetic">
+          <span class="thumb-val">127M LLM</span>
+          <span class="thumb-lbl">Trained From Scratch</span>
+        </div>
+        <div class="thumbnail-card card-aesthetic">
+          <span class="thumb-val">Interpreter</span>
+          <span class="thumb-lbl">Custom Friday Lang</span>
+        </div>
+        <div class="thumbnail-card card-aesthetic">
+          <span class="thumb-val">Python & C++</span>
+          <span class="thumb-lbl">Algorithms & Systems</span>
+        </div>
+        <div class="thumbnail-card card-aesthetic">
+          <span class="thumb-val">Full-Stack</span>
+          <span class="thumb-lbl">FastAPI / Mobile Apps</span>
+        </div>
+        <div class="thumbnail-card card-aesthetic">
+          <span class="thumb-val">MLOps</span>
+          <span class="thumb-lbl">Docker & GCP pipelines</span>
+        </div>
+      </div>
+
+      <div class="hero-action">
+        <a href="tech-projects.html" class="btn btn-secondary">
+          View Work <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ABOUT THE WORK SECTION ============== -->
+  <section id="about-work" class="section about-section">
     <div class="container">
-      <div class="hero-content">
-        
-        <!-- Main introduction text -->
-        <div class="hero-text">
-          <!-- Main heading with name -->
-          <h1 class="hero-title">Hello, I'm <span class="highlight">Devansh Gupta</span></h1>
-          
-          <!-- Updated subtitle with your personal tagline -->
-          <h2 class="hero-subtitle">Writer by heart, Engineer by brain, Storyteller by soul</h2>
-          
-          <!-- Brief description about yourself -->
-          <!-- ============== MINI SECTIONS ============== -->
-          <!-- Three quick navigation sections as requested -->
-          <div class="hero-sections">
-            <!-- Section 1: For Readers -->
-            <div class="mini-section">
-              <h3>For Readers</h3>
-              <p>Explore my thoughts, stories, and insights</p>
-              <button class="btn btn-outline" type="button" onclick="window.location.href='blogs.html'">
-                Read My Blogs
-              </button>
+      <div class="section-header">
+        <span class="label-mono section-label">01 // ABOUT MY WORK</span>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left Column: Algorithms (ML) -->
+        <div class="about-col about-approach">
+          <h3 class="label-mono">Algorithms (ML)</h3>
+          <p class="body-md">
+            I believe that machine learning is more than just importing pre-trained models. It requires a deep understanding of mathematical formulations, training algorithms, and neural network architectures.
+          </p>
+          <p class="body-md">
+            As a proof of this focus, I compiled and trained a <strong>127M parameter LLM from scratch</strong>—designing a custom <strong>Byte Pair Encoding (BPE) tokenizer</strong> and training the core transformer network to build a functional, conversational agent.
+          </p>
+        </div>
+
+        <!-- Center Column: Systems (SDE) -->
+        <div class="about-col about-timeline-col">
+          <h3 class="label-mono">Systems (SDE)</h3>
+          <div class="vertical-timeline">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="label-mono time-stamp">Compilers</span>
+                <h4>FridayLang Interpreter</h4>
+                <p>Designed a custom scripting language in C++17, complete with a lexical scanner, recursive-descent parser AST, and 15 STL-like dynamic containers.</p>
+              </div>
             </div>
 
-            <!-- Section 2: For Recruiters -->
-            <div class="mini-section">
-              <h3>For Recruiters</h3>
-              <p>Professional experience and capabilities</p>
-              <button class="btn btn-outline" type="button" onclick="window.location.href='assests/docs/Profile (1).pdf'">
-                View Resume
-              </button>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="label-mono time-stamp">Applications</span>
+                <h4>Flutter & SQLite</h4>
+                <p>Built cross-platform mobile apps (BookNook, Expense Tracker) utilizing local SQL databases, offline cache architectures, and state managers.</p>
+              </div>
             </div>
 
-            <!-- Section 3: Projects -->
-            <div class="mini-section">
-              <h3>Projects</h3>
-              <p>Technical projects and innovations</p>
-              <button class="btn btn-outline" type="button" onclick="window.location.href='tech-projects.html'">
-                Explore Work
-              </button>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="label-mono time-stamp">Backend Services</span>
+                <h4>REST APIs</h4>
+                <p>Constructed high-throughput service endpoints with FastAPI/Flask to handle model inference, query processing, and payload routing.</p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- ============== SOCIAL LINKS ============== -->
-          <!-- Professional and coding platform links -->
-          <div class="social-links">
-            <!-- GitHub - For code repositories -->
-            <a class="social-link" href="https://github.com/devanshgupta" target="_blank" rel="noopener">
-              <i class="fab fa-github" aria-hidden="true"></i>
-              <span class="sr-only">GitHub</span>
-            </a>
-            
-            <!-- LinkedIn - Professional networking -->
-            <a class="social-link" href="https://linkedin.com/in/devanshgupta" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-              <span class="sr-only">LinkedIn</span>
-            </a>
-            
-            <!-- LeetCode - Coding practice and algorithms -->
-            <a class="social-link" href="https://leetcode.com/devanshgupta" target="_blank" rel="noopener">
-              <i class="fas fa-code" aria-hidden="true"></i>
-              <span class="sr-only">LeetCode</span>
-            </a>
-            
-            <!-- HackerRank - Programming challenges and skills -->
-            <a class="social-link" href="https://www.hackerrank.com/profile/devanshgupta1942" target="_blank" rel="noopener">
-              <i class="fab fa-hackerrank" aria-hidden="true"></i>
-              <span class="sr-only">HackerRank</span>
-            </a>
-          </div>
+        <!-- Right Column: Clean Code -->
+        <div class="about-col about-principles">
+          <h3 class="label-mono">The Bridge (MLOps)</h3>
+          <p class="body-md">
+            The intersection of software systems and intelligence algorithms is where real value is built. I focus on developing clean, reproducible pipelines that scale.
+          </p>
+          <p class="body-md">
+            By coupling robust software patterns (OOP), container virtualization (Docker), cloud runtimes (GCP Cloud Run), and experiment tracking (Weights & Biases), I translate Jupyter notebooks into production-ready API services.
+          </p>
         </div>
       </div>
     </div>
   </section>
-   <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Devansh Gupta. All rights reserved. </p>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="blogs.html" aria-current="page">Stories</a>
-                    <a href="tech-projects.html">Projects</a>
-                    <a href="jobs.html">For Recruiters</a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
+  <!-- ============== WHAT'S IN MY STACK SECTION ============== -->
+  <section id="skills-stack" class="section stack-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label-mono section-label">02 // WHAT'S IN MY STACK</span>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="stack-grid">
+        <!-- Card 1: Languages -->
+        <div class="stack-card card-aesthetic">
+          <div class="stack-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <h3 class="label-mono">Languages</h3>
+          <p class="body-lg">Python, SQL, C++</p>
+          <div class="stack-sub">Core structures, queries, performance algorithms</div>
+        </div>
+
+        <!-- Card 2: Frameworks -->
+        <div class="stack-card card-aesthetic">
+          <div class="stack-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="label-mono">Frameworks</h3>
+          <p class="body-lg">PyTorch, scikit-learn, HuggingFace</p>
+          <div class="stack-sub">Neural networks, classic estimators, transformers</div>
+        </div>
+
+        <!-- Card 3: Tools -->
+        <div class="stack-card card-aesthetic">
+          <div class="stack-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <h3 class="label-mono">Tools</h3>
+          <p class="body-lg">Jupyter, Git, Docker, Weights & Biases</p>
+          <div class="stack-sub">Experimentation, versioning, containers, logs</div>
+        </div>
+
+        <!-- Card 4: Deployment -->
+        <div class="stack-card card-aesthetic">
+          <div class="stack-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="label-mono">Deployment</h3>
+          <p class="body-lg">FastAPI, Streamlit, AWS / GCP</p>
+          <div class="stack-sub">Rest APIs, microservices, cloud runtime hosting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT / CTA SECTION ============== -->
+  <section id="contact" class="contact-section-cta">
+    <!-- SVG Graphic background representing a Loss Curve & Confusion Matrix -->
+    <div class="contact-bg-visual" aria-hidden="true">
+      <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="none">
+        <!-- Loss Curve Grid -->
+        <g stroke="rgba(255,255,255,0.015)" stroke-width="1">
+          <line x1="50" y1="50" x2="750" y2="50" />
+          <line x1="50" y1="150" x2="750" y2="150" />
+          <line x1="50" y1="250" x2="750" y2="250" />
+          <line x1="50" y1="350" x2="750" y2="350" />
+        </g>
+        <!-- Loss curve lines -->
+        <path d="M 50 80 Q 200 320 400 340 T 750 348" fill="none" stroke="var(--color-primary)" stroke-opacity="0.06" stroke-width="2.5" />
+        <path d="M 50 120 Q 250 290 450 330 T 750 335" fill="none" stroke="var(--color-primary)" stroke-opacity="0.02" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <div class="container contact-cta-container">
+      <div class="contact-cta-grid">
+        <!-- Left Column: text -->
+        <div class="contact-cta-text">
+          <h2 class="headline-lg">Interested in collaborating?<br>Have a project in mind?</h2>
+          <p class="label-mono leave-msg-label">Leave a message</p>
+          
+          <div class="alternative-contacts">
+            <p class="body-md"><i class="fas fa-envelope"></i> devanshgupta1942@gmail.com</p>
+            <p class="body-md"><i class="fas fa-phone"></i> +91 7976039154</p>
+          </div>
+        </div>
+
+        <!-- Right Column: form -->
+        <div class="contact-cta-form">
+          <form class="minimal-form">
+            <div class="form-group">
+              <input type="text" id="form-name" placeholder=" " required />
+              <label for="form-name" class="label-mono">Name</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="form-email" placeholder=" " required />
+              <label for="form-email" class="label-mono">Email</label>
+            </div>
+            
+            <div class="form-group">
+              <textarea id="form-message" rows="3" placeholder=" " required></textarea>
+              <label for="form-message" class="label-mono">Message</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-text">
+                  <p class="body-md">&copy; 2025 Devansh Gupta. All rights reserved.</p>
+              </div>
+              <div class="footer-links">
+                  <a href="#home" class="label-mono">Home</a>
+                  <a href="#about-work" class="label-mono">About</a>
+                  <a href="tech-projects.html" class="label-mono">Projects</a>
+                  <a href="#skills-stack" class="label-mono">Skills</a>
+                  <a href="blogs.html" class="label-mono">Blogs</a>
+                  <a href="#contact" class="label-mono">Contact</a>
+              </div>
+              <div class="footer-actions">
+                  <a href="jobs.html" class="btn btn-primary">Hire Me</a>
+              </div>
+          </div>
+      </div>
+  </footer>
 
   <!-- ============== JAVASCRIPT FILES ============== -->
-  <!-- Add your JavaScript files here -->
   <script src="assests/js/script.js"></script>
-  
-  <!-- Theme toggle functionality -->
-  <script>
-    // Set dark mode as default when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-      const html = document.documentElement;
-      html.classList.add('dark');
-      
-      // Update theme toggle icon
-      const themeToggle = document.getElementById('theme-toggle');
-      if (themeToggle) {
-        const icon = themeToggle.querySelector('i');
-        if (icon) {
-          icon.className = 'fas fa-sun'; // Show sun icon in dark mode
-        }
-      }
-    });
-  </script>
 </body>
 </html>

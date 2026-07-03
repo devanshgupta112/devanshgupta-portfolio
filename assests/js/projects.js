@@ -1,61 +1,77 @@
-
-// Tech Projects page functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Project filtering functionality
+// Projects & Certifications JS Functions
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Projects Filtering Functionality
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const projectsCount = document.getElementById('projects-count');
     
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-            
-            const filterValue = btn.getAttribute('data-filter');
-            
-            projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category').split(' ');
+    if (filterBtns.length > 0 && projectCards.length > 0) {
+        function updateResultsCount() {
+            if (!projectsCount) return;
+            const visibleCards = Array.from(projectCards).filter(c => c.style.display !== 'none').length;
+            const activeFilterText = document.querySelector('.filter-btn.active').textContent.trim();
+            projectsCount.textContent = `Showing ${visibleCards} of ${projectCards.length} projects (${activeFilterText})`;
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
                 
-                if (filterValue === 'all' || categories.includes(filterValue)) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 100);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(30px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
+                    
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+
+                // Update count after transitions
+                setTimeout(updateResultsCount, 310);
             });
         });
-    });
 
-    // Projects scroll functionality
+        // Initialize projects count
+        updateResultsCount();
+    }
+
+    // 2. Projects Scroll Progress (Horizontal Bar representing Vertical Scroll)
     const projectsScrollContainer = document.getElementById('projectsScrollContainer');
     const projectsScrollProgress = document.getElementById('projectsScrollProgress');
     const projectsScrollUp = document.getElementById('projectsScrollUp');
     const projectsScrollDown = document.getElementById('projectsScrollDown');
 
     if (projectsScrollContainer && projectsScrollProgress) {
-        // Update scroll progress
         function updateScrollProgress() {
             const scrollTop = projectsScrollContainer.scrollTop;
             const scrollHeight = projectsScrollContainer.scrollHeight - projectsScrollContainer.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            projectsScrollProgress.style.height = scrollPercentage + '%';
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            // FIX: Set style.width instead of height for horizontal progress bar
+            projectsScrollProgress.style.width = scrollPercentage + '%';
         }
 
         projectsScrollContainer.addEventListener('scroll', updateScrollProgress);
+        // Initial setup
+        updateScrollProgress();
 
-        // Scroll buttons
         if (projectsScrollUp) {
             projectsScrollUp.addEventListener('click', () => {
                 projectsScrollContainer.scrollBy({
-                    top: -200,
+                    top: -240,
                     behavior: 'smooth'
                 });
             });
@@ -64,35 +80,36 @@ document.addEventListener('DOMContentLoaded', function() {
         if (projectsScrollDown) {
             projectsScrollDown.addEventListener('click', () => {
                 projectsScrollContainer.scrollBy({
-                    top: 200,
+                    top: 240,
                     behavior: 'smooth'
                 });
             });
         }
     }
 
-    // Certification scroll functionality for recruiters page
+    // 3. Certifications Scroll Progress (Horizontal Bar representing Vertical Scroll)
     const certScrollContainer = document.getElementById('certScrollContainer');
     const certScrollProgress = document.getElementById('certScrollProgress');
     const certScrollUp = document.getElementById('certScrollUp');
     const certScrollDown = document.getElementById('certScrollDown');
 
     if (certScrollContainer && certScrollProgress) {
-        // Update scroll progress
         function updateCertScrollProgress() {
             const scrollTop = certScrollContainer.scrollTop;
             const scrollHeight = certScrollContainer.scrollHeight - certScrollContainer.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            certScrollProgress.style.height = scrollPercentage + '%';
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            // FIX: Set style.width instead of height for horizontal progress bar
+            certScrollProgress.style.width = scrollPercentage + '%';
         }
 
         certScrollContainer.addEventListener('scroll', updateCertScrollProgress);
+        // Initial setup
+        updateCertScrollProgress();
 
-        // Scroll buttons
         if (certScrollUp) {
             certScrollUp.addEventListener('click', () => {
                 certScrollContainer.scrollBy({
-                    top: -150,
+                    top: -160,
                     behavior: 'smooth'
                 });
             });
@@ -101,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (certScrollDown) {
             certScrollDown.addEventListener('click', () => {
                 certScrollContainer.scrollBy({
-                    top: 150,
+                    top: 160,
                     behavior: 'smooth'
                 });
             });

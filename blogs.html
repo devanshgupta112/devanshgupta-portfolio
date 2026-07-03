@@ -3,73 +3,73 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- EDIT: Change the page title that appears in browser tab -->
     <title>Blogs - Devansh Gupta</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assests/css/global.css" />
     <link rel="stylesheet" href="assests/css/blogs.css" />
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <!-- ==================== NAVIGATION SECTION ==================== -->
-   <!-- ============== NAVIGATION BAR ============== -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <h2><a href="index.html" aria-label="Devansh Gupta - Go to homepage">Devansh Gupta</a></h2>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" aria-label="Devansh Gupta - Go to homepage">Devansh Gupta</a></h2>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu" role="menubar" aria-hidden="false">
+                <li class="nav-item" role="none">
+                    <a href="index.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="blogs.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-blog" aria-hidden="true"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="tech-projects.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <span>Tech Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="jobs.html" class="nav-link" role="menuitem">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        <span>For Recruiters</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
-        
-        <ul class="nav-menu" id="nav-menu" role="menubar" aria-hidden="false">
-            <li class="nav-item" role="none">
-                <a href="index.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-home" aria-hidden="true"></i>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="blogs.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-book-open" aria-hidden="true"></i>
-                    <span>Stories</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="tech-projects.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-code" aria-hidden="true"></i>
-                    <span>Tech Projects</span>
-                </a>
-            </li>
-            <li class="nav-item" role="none">
-                <a href="jobs.html" class="nav-link" role="menuitem">
-                    <i class="fas fa-briefcase" aria-hidden="true"></i>
-                    <span>For Recruiters</span>
-                </a>
-            </li>
-        </ul>
-        
-        <div class="nav-controls">
-            <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
-        </div>
-    </div>
-</nav>
-
+    </nav>
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="page-hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="page-title">Stories@Devansh Gupta</h1>
+                <h1 class="page-title">Technical Blogs</h1>
                 <p class="page-subtitle">
-                    An engineer by degree, a storyteller by destiny — because an engineer can be anything but engineer.
+                    Sharing my learnings, tutorials, and insights in Data Science, Machine Learning, and AI.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Stories Coming Soon</span>
+                        <span class="stat-number">Medium</span>
+                        <span class="stat-label">Featured Publisher</span>
                     </div>
                 </div>
             </div>
@@ -81,10 +81,10 @@
         <div class="container">
             <div class="category-filters">
                 <button class="filter-btn active" data-category="all">All Posts</button>
-                <button class="filter-btn" data-category="short-stories">Short Stories</button>
-                <button class="filter-btn" data-category="essays">Essays</button>
-                <button class="filter-btn" data-category="poetry">Poetry</button>
-                <button class="filter-btn" data-category="novel">Novel</button>
+                <button class="filter-btn" data-category="machine-learning">Machine Learning</button>
+                <button class="filter-btn" data-category="data-science">Data Science</button>
+                <button class="filter-btn" data-category="python-sql">Python & SQL</button>
+                <button class="filter-btn" data-category="tutorials">Tutorials</button>
             </div>
         </div>
     </section>
@@ -92,38 +92,39 @@
     <!-- ==================== FEATURED ARTICLE ==================== -->
     <section class="featured-post">
         <div class="container">
-            <h2 class="section-title">Featured Story</h2>
-            <article class="featured-article">
+            <h2 class="section-title">Featured Article</h2>
+            <article class="featured-article card-aesthetic">
                 <div class="featured-content">
                     <div class="featured-text">
                         <div class="article-meta">
                             <span class="article-date">
                                 <i class="fas fa-calendar"></i>
-                                Coming Soon
+                                June 2026
                             </span>
                             <span class="article-read-time">
                                 <i class="fas fa-clock"></i>
-                                -- min read
+                                8 min read
                             </span>
                             <span class="article-category featured-category">Featured</span>
                         </div>
-                        <h3 class="featured-title">Stories Coming Soon</h3>
+                        <h3 class="featured-title">Understanding Transformers: The Brains Behind Large Language Models</h3>
                         <p class="featured-excerpt">
-                            Get ready to dive into a world of imagination and emotion. From heartwarming 
-                            short stories to thought-provoking essays, captivating poetry to engaging novels - 
-                            a collection of stories that explore the human experience through different lenses.
+                            A deep dive into the self-attention mechanism, positional encoding, and multi-head attention blocks that form the backbone of modern LLMs like GPT-4, LLaMA, and Claude. Learn how these architectures process sequential data in parallel.
                         </p>
                         <div class="article-tags">
-                            <span class="tag">Stories</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">Literature</span>
-                            <span class="tag">Coming Soon</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">Deep Learning</span>
                         </div>
-                        <a href="#" class="btn btn-primary">Stay Tuned</a>
+                        <div class="featured-cta">
+                            <a href="#" class="btn btn-primary" target="_blank" rel="noopener">
+                                <i class="fab fa-medium"></i> Read on Medium
+                            </a>
+                        </div>
                     </div>
                     <div class="featured-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-feather-alt"></i>
+                            <i class="fas fa-brain"></i>
                         </div>
                     </div>
                 </div>
@@ -134,47 +135,118 @@
     <!-- ==================== ALL BLOG POSTS GRID WITH SCROLL FUNCTIONALITY ==================== -->
     <section class="all-posts">
         <div class="container">
-            <h2 class="section-title">All Stories</h2>
+            <h2 class="section-title">All Articles</h2>
+            
             <div class="blogs-scroll-container" id="blogsScrollContainer">
                 <div class="blog-grid">
 
-                    <!--
-                    NOTE: Add your custom blog cards here in future,
-                    following this boilerplate structure:
-
-                    <article class="blog-card" data-category="CATEGORY_NAME">
+                    <!-- Blog Card 1: RAG -->
+                    <article class="blog-card card-aesthetic" data-category="machine-learning tutorials">
                         <div class="blog-image">
                             <div class="image-placeholder">
-                                <i class="fas fa-ICON_NAME"></i>
+                                <i class="fas fa-database"></i>
                             </div>
                             <div class="blog-category">
-                                <span class="category-badge CATEGORY_NAME_CLASS">Category Display Name</span>
+                                <span class="category-badge tutorials">Tutorial</span>
                             </div>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span class="blog-date">
                                     <i class="fas fa-calendar"></i>
-                                    DATE_HERE
+                                    May 2026
                                 </span>
                                 <span class="blog-read-time">
                                     <i class="fas fa-clock"></i>
-                                    READ_TIME_HERE
+                                    12 min read
                                 </span>
                             </div>
-                            <h3 class="blog-title">BLOG TITLE HERE</h3>
+                            <h3 class="blog-title">An In-Depth Guide to Building RAG Pipelines</h3>
                             <p class="blog-excerpt">
-                                Brief description or excerpt of the blog post.
+                                A step-by-step technical walkthrough of implementing a Retrieval-Augmented Generation (RAG) system with ChromaDB, LangChain, and OpenAI.
                             </p>
                             <div class="blog-tags">
-                                <span class="tag">TAG 1</span>
-                                <span class="tag">TAG 2</span>
-                                Add more tags as needed
+                                <span class="tag">RAG</span>
+                                <span class="tag">LangChain</span>
+                                <span class="tag">VectorDB</span>
                             </div>
-                            <a href="YOUR_BLOG_LINK" class="blog-link">Read More</a>
+                            <a href="#" class="blog-link" target="_blank" rel="noopener">
+                                <i class="fab fa-medium"></i> Read on Medium
+                            </a>
                         </div>
                     </article>
-                    -->
+
+                    <!-- Blog Card 2: GCP Deployment -->
+                    <article class="blog-card card-aesthetic" data-category="tutorials">
+                        <div class="blog-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="blog-category">
+                                <span class="category-badge tutorials">MLOps</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    April 2026
+                                </span>
+                                <span class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    10 min read
+                                </span>
+                            </div>
+                            <h3 class="blog-title">Deploying ML Models on Google Cloud Platform</h3>
+                            <p class="blog-excerpt">
+                                Learn how to containerize Python classification models using Docker and deploy them as serverless HTTP endpoints using GCP Cloud Run.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="tag">GCP</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">MLOps</span>
+                            </div>
+                            <a href="#" class="blog-link" target="_blank" rel="noopener">
+                                <i class="fab fa-medium"></i> Read on Medium
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3: Pandas & SQL -->
+                    <article class="blog-card card-aesthetic" data-category="data-science python-sql">
+                        <div class="blog-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-table"></i>
+                            </div>
+                            <div class="blog-category">
+                                <span class="category-badge data-science">Data Science</span>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i class="fas fa-calendar"></i>
+                                    March 2026
+                                </span>
+                                <span class="blog-read-time">
+                                    <i class="fas fa-clock"></i>
+                                    6 min read
+                                </span>
+                            </div>
+                            <h3 class="blog-title">SQL vs. Pandas: When to Use Which?</h3>
+                            <p class="blog-excerpt">
+                                A comparative analysis of relational query optimization in SQL vs. in-memory data manipulation in Python Pandas for massive tables.
+                            </p>
+                            <div class="blog-tags">
+                                <span class="tag">Pandas</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Data Analysis</span>
+                            </div>
+                            <a href="#" class="blog-link" target="_blank" rel="noopener">
+                                <i class="fab fa-medium"></i> Read on Medium
+                            </a>
+                        </div>
+                    </article>
 
                 </div>
             </div>
@@ -191,26 +263,19 @@
                     <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
-
-            <div class="load-more-section" style="display: none;">
-                <button class="btn btn-secondary load-more-btn">
-                    <i class="fas fa-plus"></i>
-                    Load More Stories
-                </button>
-            </div>
         </div>
     </section>
 
     <!-- ==================== NEWSLETTER SIGNUP ==================== -->
     <section class="newsletter-section">
         <div class="container">
-            <div class="newsletter-content">
+            <div class="newsletter-content card-aesthetic">
                 <div class="newsletter-text">
                     <h2>Stay Updated</h2>
-                    <p>Get notified when I publish new stories and writings. No spam, unsubscribe anytime.</p>
+                    <p>Subscribe to receive emails when I publish new data science and machine learning articles on Medium.</p>
                 </div>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" class="newsletter-input" />
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" required />
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
@@ -223,7 +288,6 @@
             <div class="footer-content">
                 <div class="footer-text">
                     <p>&copy; 2025 Devansh Gupta. All rights reserved.</p>
-
                 </div>
                 <div class="footer-links">
                     <a href="index.html">Home</a>
@@ -235,7 +299,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript files - don't edit unless you know what you're doing -->
+    <!-- Scripts -->
     <script src="assests/js/script.js"></script>
     <script src="assests/js/blogs.js"></script>
 </body>

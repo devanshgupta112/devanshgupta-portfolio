@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data Analysis - Devansh Gupta</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assests/css/global.css">
+    <link rel="stylesheet" href="../assests/css/tech.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-secondary);
+        }
+        .project-details-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: var(--rounded-lg);
+            margin-top: var(--rounded-lg);
+        }
+        .details-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--rounded-default);
+        }
+        .back-btn-container {
+            margin-bottom: var(--rounded-default);
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .spec-table td {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .spec-table td:first-child {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            color: var(--text-primary);
+            width: 40%;
+        }
+        @media (max-width: 900px) {
+            .project-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============== NAVIGATION BAR ============== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html" class="label-mono">Devansh Gupta</a></h2>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blogs.html" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../tech-projects.html" class="nav-link active">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../jobs.html" class="nav-link">For Recruiters</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============== MAIN DETAILS ============== -->
+    <main class="container section">
+        <div class="back-btn-container">
+            <a href="../tech-projects.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+
+        <h1 class="display-xl" style="color: var(--text-primary); margin-bottom: 1rem;">Weather Data Analysis</h1>
+        <p class="body-lg" style="margin-bottom: 2rem;">A Python-powered data science dashboard analyzing 3 years of meteorological datasets to yield visual insights and trend predictions.</p>
+
+        <div class="project-details-grid">
+            <!-- Left Column: Details -->
+            <div class="details-col">
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">Project Overview</h2>
+                    <p class="body-md">
+                        This analytics dashboard processes historical climate distributions, temperature fluctuations, and precipitation correlations. Leveraging Python's scientific ecosystem, the pipeline loads, cleans, and structures messy csv files to run exploratory data analysis (EDA).
+                    </p>
+                    <p class="body-md">
+                        The visual dashboard helps identify macro weather cycles, anomalous temperature deviations, and regional air pressure trends through clean interactive chart sheets.
+                    </p>
+                </div>
+
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">Mathematical & Statistical Processing</h2>
+                    <p class="body-md">
+                        Data cleaning structures missing indices and eliminates statistical outliers via standard deviations. The metrics engine calculates rolling averages, temperature gradients, and correlation matrices between humidity levels and air pressures.
+                    </p>
+                    <pre><span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+
+<span class="comment"># Load and handle missing data</span>
+df = pd.read_csv(<span class="string">"weather_raw.csv"</span>)
+df[<span class="string">"temperature"</span>] = df[<span class="string">"temperature"</span>].interpolate(method=<span class="string">"linear"</span>)
+
+<span class="comment"># Calculate rolling averages & anomalies</span>
+df[<span class="string">"temp_rolling_mean"</span>] = df[<span class="string">"temperature"</span>].rolling(window=7).mean()
+anomaly_threshold = 3 * df[<span class="string">"temperature"</span>].std()
+anomalies = df[np.abs(df[<span class="string">"temperature"</span>] - df[<span class="string">"temperature"</span>].mean()) > anomaly_threshold]</pre>
+                </div>
+            </div>
+
+            <!-- Right Column: Info & Specs -->
+            <div class="details-col">
+                <div class="card-aesthetic" style="padding: 2rem;">
+                    <h2 class="headline-md" style="margin-bottom: 1rem;">Dashboard Specifications</h2>
+                    <table class="spec-table">
+                        <tr>
+                            <td>Core Stack</td>
+                            <td>Python, Pandas, NumPy</td>
+                        </tr>
+                        <tr>
+                            <td>Visualizations</td>
+                            <td>Matplotlib, Seaborn</td>
+                        </tr>
+                        <tr>
+                            <td>Data Resolution</td>
+                            <td>Hourly / Daily Samples</td>
+                        </tr>
+                        <tr>
+                            <td>Time Span</td>
+                            <td>3 Years Historical</td>
+                        </tr>
+                        <tr>
+                            <td>File Scale</td>
+                            <td>1.2 Million Rows</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card-aesthetic" style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 class="label-mono">Project Links</h3>
+                    <a href="https://github.com/devansh-112/Weather-Data-Analysis-Dashboard.git" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p class="body-md">&copy; 2025 Devansh Gupta. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
