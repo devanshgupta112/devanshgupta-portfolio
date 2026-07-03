@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. SET ACTIVE NAVIGATION LINK BASED ON CURRENT PAGE
     initActivePageLink();
+    
+    // 4b. INITIALIZE SCROLL SPY ON HOMEPAGE
+    initScrollSpy();
 
     // 5. INTERSECTION OBSERVER FOR CARD ANIMATIONS
     initCardAnimations();
@@ -133,15 +136,24 @@ function initSmoothScroll() {
    ========================================================================== */
 function initActivePageLink() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const path = window.location.pathname;
+    const currentPage = path.split('/').pop() || 'index.html';
+    const isSubproject = path.includes('/projects/');
     
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (
-            href === currentPage ||
-            (currentPage === '' && href === 'index.html') ||
-            (currentPage === 'index.html' && href === 'index.html')
+        if (!href) return;
+        
+        // Strip parent directory paths and anchors for comparison
+        const cleanHref = href.replace('../', '').split('#')[0];
+        
+        if (isSubproject && cleanHref === 'tech-projects.html') {
+            link.classList.add('active');
+        } else if (
+            cleanHref === currentPage ||
+            (currentPage === 'index.html' && cleanHref === '') ||
+            (currentPage === '' && cleanHref === 'index.html')
         ) {
             link.classList.add('active');
         }
@@ -209,6 +221,42 @@ function initFormDefaults() {
             e.preventDefault();
             console.log('Form submission intercepted');
             return false;
+        });
+    });
+}
+
+/* ==========================================================================
+   SCROLL SPY ON HOMEPAGE
+   ========================================================================== */
+function initScrollSpy() {
+    const path = window.location.pathname;
+    const currentPage = path.split('/').pop() || 'index.html';
+    
+    if (currentPage !== 'index.html' && currentPage !== '') return;
+    
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"], .nav-link[href*="index.html#"]');
+    
+    if (sections.length === 0 || navLinks.length === 0) return;
+    
+    window.addEventListener('scroll', () => {
+        let currentSectionId = 'home';
+        const scrollPosition = window.scrollY + 160;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href.endsWith(`#${currentSectionId}`)) {
+                link.classList.add('active');
+            }
         });
     });
 }

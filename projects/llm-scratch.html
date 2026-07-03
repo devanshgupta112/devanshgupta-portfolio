@@ -56,23 +56,41 @@
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2><a href="../index.html" class="label-mono">Devansh Gupta</a></h2>
+                <h2><a href="../index.html" aria-label="Devansh Gupta - Go to homepage" class="label-mono">Devansh Gupta</a></h2>
             </div>
             
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
+            <ul class="nav-menu" id="nav-menu" role="menubar" aria-hidden="false">
+                <li class="nav-item" role="none">
+                    <a href="../index.html#home" class="nav-link" role="menuitem">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a href="../blogs.html" class="nav-link">Blogs</a>
+                <li class="nav-item" role="none">
+                    <a href="../index.html#about-work" class="nav-link" role="menuitem">About</a>
                 </li>
-                <li class="nav-item">
-                    <a href="../tech-projects.html" class="nav-link active">Projects</a>
+                <li class="nav-item" role="none">
+                    <a href="../tech-projects.html" class="nav-link" role="menuitem">Projects</a>
                 </li>
-                <li class="nav-item">
-                    <a href="../jobs.html" class="nav-link">For Recruiters</a>
+                <li class="nav-item" role="none">
+                    <a href="../index.html#skills-stack" class="nav-link" role="menuitem">Skills</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="../blogs.html" class="nav-link" role="menuitem">Blogs</a>
+                </li>
+                <li class="nav-item" role="none">
+                    <a href="../index.html#contact" class="nav-link" role="menuitem">Contact</a>
                 </li>
             </ul>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <a href="../jobs.html" class="btn btn-primary" role="button">Hire Me</a>
+                <button class="nav-toggle" id="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
